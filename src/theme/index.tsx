@@ -4,26 +4,21 @@ import {createTheme, ThemeProvider} from '@mui/material/styles';
 
 interface AppThemeProps {
  children: React.ReactNode;
- disableCustomTheme?: boolean;
  themeComponents?: ThemeOptions['components'];
 }
 
 export default function AppTheme(props: AppThemeProps) {
- const {children, disableCustomTheme} = props;
+ const {children} = props;
  const theme = React.useMemo(() => {
-  if (disableCustomTheme) {
-   return {};
-  }
+
   return createTheme({
    cssVariables: {
     colorSchemeSelector: 'data-mui-color-scheme',
     cssVarPrefix: 'template',
    },
+    defaultColorScheme: 'dark'
   });
- }, [disableCustomTheme]);
- if (disableCustomTheme) {
-  return <React.Fragment>{children}</React.Fragment>;
- }
+ }, []);
  return (
   <ThemeProvider theme={theme} disableTransitionOnChange>
    {children}

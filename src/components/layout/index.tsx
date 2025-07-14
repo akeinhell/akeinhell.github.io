@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import './layout.css';
 import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
@@ -12,7 +12,7 @@ import Footer from "../../components/Footer";
 import MainContent from "../../components/MainContent";
 import Latest from "../../components/Latest";
 
-const Layout = () => (
+const Index = () => (
   <>
     <AppTheme>
       <CssBaseline enableColorScheme/>
@@ -31,4 +31,4 @@ const Layout = () => (
   </>
 );
 
-export default Layout;
+export default Index;
